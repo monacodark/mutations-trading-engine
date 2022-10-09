@@ -1,0 +1,16 @@
+@import
+'~bootstrap/scss/functions',
+'~bootstrap/scss/variables',
+'~bootstrap/scss/mixins',
+'~bootstrap/scss/reboot',
+'~bootstrap/scss/bootstrap-grid',
+'~bootstrap/scss/utilities';
+
+@import './colors.scss';
+
+body {
+  background-color: $grey-1000;
+  color: $grey-50;
+  padding-top: 30px;
+  // font-size: 10px;
+}

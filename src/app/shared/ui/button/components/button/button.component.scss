@@ -1,0 +1,33 @@
+@import 'src/styles/colors.scss';
+
+
+.button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid $grey-800;
+  background-color: transparent;
+  color: $grey-200;
+
+  transition: border 0.3s ease;
+
+  &:hover:not(.button__disabled, .button__primary) {
+    border: 1px solid $grey-200;
+  }
+
+  &__disabled {
+    cursor: not-allowed;
+    color: $grey-700;
+  }
+
+  &__primary {
+    border: 1px solid $purple-800;
+    background-color: $purple-800;
+
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $purple-700;
+    }
+  }
+}

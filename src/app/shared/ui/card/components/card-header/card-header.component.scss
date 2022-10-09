@@ -1,0 +1,17 @@
+@import 'src/styles/colors.scss';
+
+.card-header {
+  padding: 15px;
+  border-bottom: 1px solid $grey-800;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 46px;
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+}

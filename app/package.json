@@ -1,0 +1,13 @@
+{
+  "name": "mutations-trading-engine-electron",
+  "description": "Next-gen trading environment",
+  "author": {
+    "name": "Monaco Dark",
+    "email": "monacodark@gmail.com"
+  },
+  "version": "11.1.0",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+  }
+}

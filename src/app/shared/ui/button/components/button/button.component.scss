@@ -11,16 +11,16 @@
 
   transition: border 0.3s ease;
 
-  &:hover:not(.button__disabled, .button__primary) {
-    border: 1px solid $grey-200;
+  &:hover:not(.button--disabled, .button--primary) {
+    border: 1px solid $grey-700;
   }
 
-  &__disabled {
+  &--disabled {
     cursor: not-allowed;
     color: $grey-700;
   }
 
-  &__primary {
+  &--primary {
     border: 1px solid $purple-800;
     background-color: $purple-800;
 

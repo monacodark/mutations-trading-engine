@@ -19,7 +19,7 @@
       @include make-col(6);
     }
     @include media-breakpoint-up(lg) {
-      @include make-col(8);
+      @include make-col(10);
     }
   }
   
@@ -30,7 +30,7 @@
       @include make-col(6);
     }
     @include media-breakpoint-up(lg) {
-      @include make-col(4);
+      @include make-col(2);
     }
   }
 

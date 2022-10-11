@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { ButtonComponent } from './components/button/button.component';
+import { LinkComponent } from './components/link/link.component';
 
 
 @NgModule({
@@ -11,10 +11,10 @@ import { ButtonComponent } from './components/button/button.component';
     RouterModule,
   ],
   declarations: [
-    ButtonComponent,
+    LinkComponent,
   ],
   exports: [
-    ButtonComponent,
+    LinkComponent,
   ],
 })
-export class ButtonModule {}
+export class LinkModule {}

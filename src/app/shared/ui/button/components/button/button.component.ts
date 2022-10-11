@@ -12,6 +12,8 @@ export class ButtonComponent {
   @Input() disabled: boolean = false;
   @Input() accent: boolean = false;
   @Input() primary: boolean = false;
+  @Input() link: string[] = [];
+  @Input() label: string = 'button';
 
   clickHandler(): void {
     this.click.emit();

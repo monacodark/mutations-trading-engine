@@ -1,23 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
 import { createChart } from 'lightweight-charts';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'ms-home-page',
+  templateUrl: 'home-page.component.html',
+  styleUrls: ['home-page.component.scss'],
 })
-export class HomeComponent implements OnInit {
-
-  constructor(private router: Router) { }
-
+export class HomePageComponent implements OnInit {
   ngOnInit(): void {
-    console.log('HomeComponent INIT');
-
     const chartContainer = document.getElementById('chart');
-
-    console.log(chartContainer.clientWidth)
 
     const chart = createChart(chartContainer, { height: 600, width: chartContainer.clientWidth + 30 });
     const lineSeries = chart.addLineSeries();
@@ -33,9 +24,5 @@ export class HomeComponent implements OnInit {
         { time: '2019-04-19', value: 81.89 },
         { time: '2019-04-20', value: 74.43 },
     ]);
-  }
-
-  click(): void {
-    console.log('click1')
   }
 }

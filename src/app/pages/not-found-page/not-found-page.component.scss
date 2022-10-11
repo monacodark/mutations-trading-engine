@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .not-found-page {
+    &__emoji {
+      font-size: 160px;
+    }
+
+    &__info {
+      text-align: center;
+    }
+  }
+}

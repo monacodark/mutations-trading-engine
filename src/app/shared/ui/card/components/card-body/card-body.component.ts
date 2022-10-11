@@ -5,10 +5,6 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './card-body.component.html',
   styleUrls: ['./card-body.component.scss'],
 })
-export class CardBodyComponent implements OnInit {
+export class CardBodyComponent {
   @Input() noPadding: boolean = false;
-
-  ngOnInit(): void {
-    console.log('yo', this.noPadding);
-  }
 }

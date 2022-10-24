@@ -1,0 +1,13 @@
+<fieldset class="text-field" [formGroup]="form">
+  <div class="text-field__body">
+    <label for="text-field" class="text-field__label">Amount</label>
+    <input
+      class="text-field__input"
+      type="text"
+      id="text-field"
+      formControlName="input"
+      (input)="doInput()"
+      (blur)="onTouched()"
+    />
+  </div>
+</fieldset>

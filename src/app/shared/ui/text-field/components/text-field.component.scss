@@ -1,0 +1,42 @@
+@import 'src/styles/colors.scss';
+
+
+.text-field {
+  &__body {
+    border: 2px solid $grey-700;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0 15px;
+    background-color: $grey-800;
+    position: relative;
+    transition: border 0.3s ease;
+
+    &:focus-within {
+      border: 2px solid $amber-700;
+
+      .text-field__label {
+        font-size: 12px;
+        top: 6px;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    color: $grey-400;
+    cursor: text;
+    transition: font-size 0.3s ease;
+  }
+  
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    caret-color: $amber-700;
+    color: $grey-50;
+    padding: 22px 0 6px;
+  }
+}

@@ -24,7 +24,7 @@ export class TextFieldComponent implements ControlValueAccessor, OnInit {
   disabled = false;
   form!: FormGroup;
 
-  doInput(): void {
+  onInput(): void {
     this.onChange(this.form.value.input)
   }
 

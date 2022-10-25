@@ -53,12 +53,7 @@ export class TextFieldComponent implements ControlValueAccessor, OnInit {
   }
 
   setDisabledState(disabled: boolean) {
-    if (disabled) {
-      this.form.disable();
-    }
-    else {
-      this.form.enable();
-    }
+    this.disabled = disabled;
   }
 
   markAsTouched() {

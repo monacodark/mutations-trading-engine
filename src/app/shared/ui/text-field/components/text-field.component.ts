@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
@@ -15,6 +15,10 @@ import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR } from 
   ],
 })
 export class TextFieldComponent implements ControlValueAccessor, OnInit {
+  @Input() formControlName!: string;
+  @Input() error!: string | null;
+  @Input() label!: string;
+
   constructor(
     private formBuilder: FormBuilder,
   ) {}

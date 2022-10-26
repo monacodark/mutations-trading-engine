@@ -44,6 +44,7 @@ export class HomePageComponent implements OnInit {
   initForm(): void {
     this.testForm = this.formBuilder.group({
       test: [''],
+      test2: [''],
     });
   }
 

@@ -1,13 +1,25 @@
-<fieldset class="text-field" [formGroup]="form">
+<fieldset
+  class="text-field"
+  [formGroup]="form"
+  [class.text-field--filled]="!!form.value.input"
+  [class.text-field--error]="error"
+>
   <div class="text-field__body">
-    <label for="text-field" class="text-field__label">Amount</label>
+    <label [for]="formControlName" class="text-field__label">{{label}}</label>
     <input
       class="text-field__input"
       type="text"
-      id="text-field"
+      [id]="formControlName"
+      [name]="formControlName"
       formControlName="input"
       (input)="onInput()"
       (blur)="onTouched()"
     />
+    <div
+      *ngIf="error"
+      class="text-field__error-indicator"
+    >
+    </div>
   </div>
+  <div class="text-field__error-message">{{error}}</div>
 </fieldset>

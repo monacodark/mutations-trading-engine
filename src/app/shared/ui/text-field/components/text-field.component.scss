@@ -2,6 +2,9 @@
 
 
 .text-field {
+  margin-bottom: 10px;
+  position: relative;
+
   &__body {
     border: 2px solid $grey-700;
     border-radius: 5px;
@@ -12,7 +15,7 @@
     transition: border 0.3s ease;
 
     &:focus-within {
-      border: 2px solid $amber-700;
+      border: 2px solid $amber-600;
 
       .text-field__label {
         font-size: 12px;
@@ -38,5 +41,57 @@
     caret-color: $amber-700;
     color: $grey-50;
     padding: 22px 0 6px;
+  }
+
+  &__error-indicator {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: $amber-900;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+  }
+
+  &__error-message {
+    position: absolute;
+    left: 0px;
+    bottom: -52px;
+    background-color: $amber-900;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;
+
+    &:after {
+      content: ' ';
+      width: 0; 
+      height: 0; 
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid $amber-900;
+      position: absolute;
+      top: -7px;
+      left: 10px;
+    }
+  }
+
+  &:focus-within {
+    .text-field__error-message {
+      visibility: visible;
+    }
+  }
+
+  &--filled {
+    .text-field__label {
+      font-size: 12px;
+      top: 6px;
+    }
+  }
+
+  &--error {
+    .text-field__body {
+      border: 2px solid $amber-900;
+      padding-right: 50px;
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { createChart } from 'lightweight-charts';
 
 @Component({
@@ -7,6 +8,12 @@ import { createChart } from 'lightweight-charts';
   styleUrls: ['home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
+  testForm!: FormGroup;
+  
+  constructor(
+    private formBuilder: FormBuilder,
+  ) {}
+
   ngOnInit(): void {
     const chartContainer = document.getElementById('chart');
 
@@ -30,5 +37,18 @@ export class HomePageComponent implements OnInit {
         { time: '2019-04-25', value: 81.89 },
         { time: '2019-04-26', value: 74.43 },
     ]);
+
+    this.initForm();
+  }
+
+  initForm(): void {
+    this.testForm = this.formBuilder.group({
+      test: [''],
+      test2: [''],
+    });
+  }
+
+  onSubmit(): void {
+    console.log('form', this.testForm.value);
   }
 }

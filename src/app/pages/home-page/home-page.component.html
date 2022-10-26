@@ -27,10 +27,25 @@
         </ms-card-header>
         
         <ms-card-body>
-          <p>HOME <ms-link [link]="['/detail']">sit amet</ms-link> consectetur adipisicing elit. Exercitationem aspernatur vitae ipsa alias fugiat aut ut necessitatibus corporis, est cupiditate, eligendi quo provident nulla perspiciatis voluptate, veniam enim facere et?</p>
+          <form
+            [formGroup]="testForm"
+            (ngSubmit)="onSubmit()"
+          >
+            <ms-text-field
+              label="Amount"
+              formControlName="test"
+              [error]="null"
+            ></ms-text-field>     
+            <ms-text-field
+              label="Test"
+              formControlName="test2"
+              [error]="'Vse holoso!'"
+            ></ms-text-field>     
+          </form>     
         </ms-card-body>
         
         <ms-card-footer>
+          <ms-button (click)="onSubmit()" [label]="'Submit'"></ms-button>
           <ms-button [link]="['/details']" [label]="'go'"></ms-button>
         </ms-card-footer>
       </ms-card>

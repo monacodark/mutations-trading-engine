@@ -18,6 +18,7 @@ export class TextFieldComponent implements ControlValueAccessor, OnInit {
   @Input() formControlName!: string;
   @Input() error!: string | null;
   @Input() label!: string;
+  @Input() type: string = 'text';
 
   constructor(
     private formBuilder: FormBuilder,

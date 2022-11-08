@@ -1,26 +1,60 @@
-<div class="example-container">
-  <div class="example-row">
-    <div class="example-content-main">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
       <ms-card>
-        <ms-card-header title="BTCUSDT">
-          <!-- <ms-button
-            [primary]="true"
-            (click)="click()"
-          ></ms-button> -->
-        </ms-card-header>
+        <ms-card-header title="MM Calc"></ms-card-header>
         
-        <ms-card-body [noPadding]="true">
-          <div id="chart"></div>
+        <ms-card-body>
+          <form [formGroup]="mmForm">
+            <ms-text-field
+              label="Balance"
+              formControlName="balance"
+              [type]="'number'"
+            ></ms-text-field>
+          
+            <ms-text-field
+              label="Risk %"
+              formControlName="riskPercent"
+              [type]="'number'"
+            ></ms-text-field>
+          
+            <div class="buttons">
+              <div class="buttons__wrapper">
+                <ms-button
+                  [disabled]="direction === 'sell'"
+                  (click)="setDirection('sell')"
+                  [fullWidth]="true"
+                >SELL</ms-button>
+              </div>
+              <div class="buttons__wrapper">
+                <ms-button
+                  [disabled]="direction === 'buy'"
+                  (click)="setDirection('buy')"
+                  [fullWidth]="true"
+                >BUY</ms-button>
+              </div>
+            </div>
+
+            <ms-text-field
+              label="Cost price"
+              formControlName="costPrice"
+              [type]="'number'"
+            ></ms-text-field>
+
+            <ms-text-field
+              label="SL price"
+              formControlName="stopLossPrice"
+              [type]="'number'"
+            ></ms-text-field>
+          </form>   
         </ms-card-body>
         
         <ms-card-footer>
-          <!-- <ms-button
-          [disabled]="true"
-          (click)="click()"></ms-button> -->
+          Result: {{ resultAmount }}
         </ms-card-footer>
       </ms-card>
     </div>
-    <div class="example-content-secondary">
+    <!-- <div class="example-content-secondary">
       <ms-card>
         <ms-card-header title="Header yopta">
           <ms-button></ms-button>
@@ -36,12 +70,12 @@
               formControlName="test"
               [type]="'number'"
               [error]="null"
-            ></ms-text-field>     
+            ></ms-text-field>
             <ms-text-field
               label="Test"
               formControlName="test2"
               [error]="'Vse holoso!'"
-            ></ms-text-field>     
+            ></ms-text-field>
           </form>     
         </ms-card-body>
         
@@ -50,6 +84,6 @@
           <ms-button [link]="['/details']" [label]="'go'"></ms-button>
         </ms-card-footer>
       </ms-card>
-    </div>
+    </div> -->
   </div>
 </div>

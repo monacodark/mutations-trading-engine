@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ButtonModule } from '../../shared/ui/button/button.module';
 import { CardModule } from '../../shared/ui/card/card.module';
 import { LinkModule } from '../../shared/ui/link/link.module';
+import { SelectFieldModule } from '../../shared/ui/select-field/select-field.module';
 import { TextFieldModule } from '../../shared/ui/text-field/text-field.module';
 import { HomePageComponent } from './home-page.component';
 
@@ -27,6 +28,7 @@ const routes: Routes = [
     ButtonModule,
     LinkModule,
     TextFieldModule,
+    SelectFieldModule,
   ],
   declarations: [
     HomePageComponent,

@@ -1,7 +1,7 @@
 @import 'src/styles/colors.scss';
 
 
-.text-field {
+.select-field {
   margin-bottom: 10px;
   position: relative;
 
@@ -23,6 +23,17 @@
       }
     }
   }
+
+  &__list {
+    position: absolute;
+    background-color: #438;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+
 
   &__label {
     position: absolute;
@@ -75,7 +86,7 @@
     }
   }
 
-  &:focus-within:has(.text-field--error) {
+  &:focus-within {
     .text-field__error-message {
       visibility: visible;
     }

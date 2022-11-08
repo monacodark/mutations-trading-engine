@@ -2,19 +2,58 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { createChart } from 'lightweight-charts';
 
+
+type TradeDirection = 'sell' | 'buy';
+
 @Component({
   selector: 'ms-home-page',
   templateUrl: 'home-page.component.html',
   styleUrls: ['home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  testForm!: FormGroup;
+  mmForm!: FormGroup;
+  direction: TradeDirection = 'sell';
   
   constructor(
     private formBuilder: FormBuilder,
   ) {}
 
   ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm(): void {
+    this.mmForm = this.formBuilder.group({
+      'balance': [0],
+      'riskPercent': [0],
+      'costPrice': [0],
+      'stopLossPrice': [0],
+    });
+  }
+
+  setDirection(direction: TradeDirection): void {
+    this.direction = direction;
+  }
+
+  get resultAmount(): string {
+    const { balance, riskPercent, costPrice, stopLossPrice } = this.mmForm.value;
+    const isReady = balance && riskPercent && costPrice && stopLossPrice;
+
+    if (!isReady) {
+      return 'error';
+    }
+
+    const distance = 
+      this.direction === 'buy'
+        ? Number(costPrice) - Number(stopLossPrice)
+        : Number(stopLossPrice) - Number(costPrice);
+
+    const riskAmount = Number(balance) / 100 * Number(riskPercent);
+
+    return (riskAmount / distance).toFixed(2);
+  }
+
+  initChart(): void {
     const chartContainer = document.getElementById('chart');
 
     const chart = createChart(chartContainer, { height: 600, width: chartContainer.clientWidth + 30 });
@@ -37,18 +76,5 @@ export class HomePageComponent implements OnInit {
         { time: '2019-04-25', value: 81.89 },
         { time: '2019-04-26', value: 74.43 },
     ]);
-
-    this.initForm();
-  }
-
-  initForm(): void {
-    this.testForm = this.formBuilder.group({
-      test: [''],
-      test2: [''],
-    });
-  }
-
-  onSubmit(): void {
-    console.log('form', this.testForm.value);
   }
 }

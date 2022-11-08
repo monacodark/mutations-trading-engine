@@ -1,0 +1,31 @@
+<fieldset
+  class="select-field"
+  [formGroup]="form"
+  [class.select-field--filled]="!!form.value.input"
+  [class.select-field--error]="error"
+>
+  <div class="select-field__body">
+    <div class="select-field__label">{{label}}</div>
+    <button
+      type='button'
+      class="select-field__button"
+      aria-haspopup='listbox'
+      aria-expanded="false"
+    >
+      select
+    </button>
+    <div class="select-field__list">
+      <div class="select-field__item" (click)="onSelect('valllll')"></div>
+      <div class="select-field__item" (click)="onSelect('valllll')"></div>
+      <div class="select-field__item" (click)="onSelect('valllll')"></div>
+      <div class="select-field__item" (click)="onSelect('valllll')"></div>
+      <div class="select-field__item" (click)="onSelect('valllll')"></div>
+    </div>
+    <div
+      *ngIf="error"
+      class="select-field__error-indicator"
+    >
+    </div>
+  </div>
+  <div class="select-field__error-message">{{error}}</div>
+</fieldset>

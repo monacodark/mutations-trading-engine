@@ -4,8 +4,9 @@
   [class.button--disabled]="disabled"
   [class.button--accent]="accent"
   [class.button--primary]="primary"
+  [class.button--full-width]="fullWidth"
   (click)="clickHandler"
   [routerLink]="link"
 >
-  {{label}}
+  <ng-content></ng-content>
 </button>

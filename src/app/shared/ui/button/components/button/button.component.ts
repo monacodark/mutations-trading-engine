@@ -13,7 +13,7 @@ export class ButtonComponent {
   @Input() accent: boolean = false;
   @Input() primary: boolean = false;
   @Input() link: string[] = [];
-  @Input() label: string = 'button';
+  @Input() fullWidth: boolean = false;
 
   clickHandler(): void {
     this.click.emit();
